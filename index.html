@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AR Poster</title>
+    <style>
+      #ar {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ar">
+      <a-scene arjs embedded>
+        <a-marker id="marker1" preset="hiro"
+          ><a-image
+            id="content1"
+            src="src/assets/ar_assets/contents/logo.png"
+            height="0.186"
+            width="0.731"
+            rotation="-90 0 0"
+            position="0 0 -1.5"
+          ></a-image
+        ></a-marker>
+
+        <a-marker
+          id="marker2"
+          type="pattern"
+          preset="custom"
+          url="src/assets/ar_assets/markers/pattern-marker2.patt"
+          ><a-text
+            id="content2"
+            value="hello world"
+            color="orange"
+            rotation="-90 0 0"
+            position="-0.3 0 -1.5"
+          ></a-text
+        ></a-marker>
+
+        <a-marker
+          id="marker3"
+          type="pattern"
+          preset="custom"
+          url="src/assets/ar_assets/markers/pattern-marker3.patt"
+          ><a-video
+            id="content3"
+            src="src/assets/ar_assets/contents/demoVideo.mp4"
+            autoplay="true"
+            height="0.9" width="1.6"
+            rotation="-90 0 0"
+            position="0 0 -1.5"
+          ></a-video>
+        </a-marker>
+      </a-scene>
+    </div>
+    <div id="app"></div>
+    <script></script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
